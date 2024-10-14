@@ -1,5 +1,5 @@
 import streamlit as st
-import folium as fl
+import folium
 from streamlit_folium import st_folium, folium_static
 
 # add image in page
@@ -16,14 +16,14 @@ with parking_1:
     st.subheader(' 7 free spots out of 69 ')
 
     # Map begin initialize
-    map = fl.Map(location=[-2.4997650854460436, -44.286793349112095], zoom_start=16)
+    map = folium.Map(location=[-2.4997650854460436, -44.286793349112095], zoom_start=16)
 
-    fg = fl.FeatureGroup(name="Estacionamento 1", show=True).add_to(map)
+    fg = folium.FeatureGroup(name="Estacionamento 1", show=True).add_to(map)
 
-    fl.Marker(
+    folium.Marker(
                 [-2.499214473542157, -44.28518202906775], 
                 popup="Parking 1", 
-                icon=fl.Icon(color='red'),
+                icon=folium.Icon(color='red'),
                 tooltip="Parking 1").add_to(fg)
 
     st_folium(map, width=950)
@@ -35,14 +35,14 @@ with parking_2:
     st.subheader(' 59 free spots out of 100 ')
 
     # Map begin initialize
-    map = fl.Map(location=[-2.4997650854460436, -44.286793349112095], zoom_start=16)
+    map = folium.Map(location=[-2.4997650854460436, -44.286793349112095], zoom_start=16)
 
-    fg = fl.FeatureGroup(name="Estacionamento 1", show=True).add_to(map)
+    fg = folium.FeatureGroup(name="Estacionamento 1", show=True).add_to(map)
 
-    fl.Marker(
+    folium.Marker(
                 [-2.499214473542157, -44.28518202906775], 
                 popup="Parking 2", 
-                icon=fl.Icon(color='red'),
+                icon=folium.Icon(color='red'),
                 tooltip="Parking 2").add_to(fg)
 
     st_folium(map, width=950)
