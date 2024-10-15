@@ -1,22 +1,31 @@
 import streamlit as st
 import folium
-from streamlit_folium import st_folium, folium_static
+from streamlit_folium import st_folium
+import datetime
+
+
+#Get add datetime
+x = datetime.datetime.now()
+
 
 # add image in page
 st.image("logo_parking.png", caption="Parking Lot", width=100)
 
-st.header('Hello Parking Lot')
+st.header('Hello, welcome to parking system!')
+st.subheader(f':date: Today : {x.day}/{x.month}/{x.year} ')
 
 #Tabs
-parking_1, parking_2, about = st.tabs(["Parking 1", "Parking 2", "About"])
+parking,about = st.tabs(["Parking ","About"])
 
 
-with parking_1:
+with parking:
 
-    st.subheader(' 7 free spots out of 69 ')
+    st.subheader(':round_pushpin: Parking 1: :red[7] free out of :red[69] ')
+    st.subheader(':round_pushpin: Parking 2: :red[56] free out of :red[100] ')
+
 
     # Map begin initialize
-    map = folium.Map(location=[-2.4997650854460436, -44.286793349112095], zoom_start=16)
+    map = folium.Map(location=[-2.4981688900228276, -44.285531045356464], zoom_start=16)
 
     fg = folium.FeatureGroup(name="Estacionamento 1", show=True).add_to(map)
 
@@ -24,28 +33,20 @@ with parking_1:
                 [-2.499214473542157, -44.28518202906775], 
                 popup="Parking 1", 
                 icon=folium.Icon(color='red'),
-                tooltip="Parking 1").add_to(fg)
-
-    st_folium(map, width=950)
-
-
-
-with parking_2:
-
-    st.subheader(' 59 free spots out of 100 ')
-
-    # Map begin initialize
-    map = folium.Map(location=[-2.4997650854460436, -44.286793349112095], zoom_start=16)
-
-    fg = folium.FeatureGroup(name="Estacionamento 1", show=True).add_to(map)
+                tooltip="Parking 1: 7 free").add_to(fg)
+    
+    fg = folium.FeatureGroup(name="Estacionamento 2", show=True).add_to(map)
 
     folium.Marker(
-                [-2.499214473542157, -44.28518202906775], 
+                [-2.4979254578655006, -44.28468403902029], 
                 popup="Parking 2", 
                 icon=folium.Icon(color='red'),
-                tooltip="Parking 2").add_to(fg)
+                tooltip="Parking 2: 56 free").add_to(fg)
 
-    st_folium(map, width=950)
+    st_folium(map, width=750)
+
+
+
 
 with about:
 
