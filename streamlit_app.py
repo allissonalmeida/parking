@@ -65,4 +65,6 @@ with about:
     st.write('Version: 1.0.0')
     st.write('Develepor: Allisson Almeida')
     st.write('E-mail: ajsalmeida@inf.puc-rio.br')
+    st.write('GitHub: https://github.com/allissonalmeida/parking')
+    st.write('Streamlit Share: https://parking-lot.streamlit.app/')
     
