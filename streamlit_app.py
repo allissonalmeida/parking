@@ -2,6 +2,7 @@ import streamlit as st
 import folium
 from streamlit_folium import st_folium
 import datetime
+import random
 
 
 #Get add datetime
@@ -14,6 +15,9 @@ st.header('Hello, welcome to parking system!')
 #st.subheader(f':date: Today : {x.day}/{x.month}/{x.year} ')
 st.subheader(f':date: Today : {x} ')
 
+# random teste
+vaga_free_est_1 = random.randrange(1,69)
+vaga_free_est_2 = random.randrange(1,100)
 
 #Tabs
 parking,about = st.tabs(["Parking ","About"])
@@ -21,8 +25,8 @@ parking,about = st.tabs(["Parking ","About"])
 
 with parking:
 
-    st.subheader(':round_pushpin: Parking 1: :red[7] free out of :red[69] ')
-    st.subheader(':round_pushpin: Parking 2: :red[56] free out of :red[100] ')
+    st.subheader(f':round_pushpin: Parking 1: :red[{vaga_free_est_1}] free out of :red[69] ')
+    st.subheader(f':round_pushpin: Parking 2: :red[{vaga_free_est_2}] free out of :red[100] ')
 
 
     # Map begin initialize
