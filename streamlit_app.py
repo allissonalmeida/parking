@@ -11,7 +11,9 @@ x = datetime.datetime.now()
 st.image("logo_parking.png", caption="Parking Lot", width=100)
 
 st.header('Hello, welcome to parking system!')
-st.subheader(f':date: Today : {x.day}/{x.month}/{x.year} ')
+#st.subheader(f':date: Today : {x.day}/{x.month}/{x.year} ')
+st.subheader(f':date: Today : {x} ')
+
 
 #Tabs
 parking,about = st.tabs(["Parking ","About"])
