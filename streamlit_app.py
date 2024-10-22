@@ -7,13 +7,14 @@ import random
 
 #Get add datetime
 x = datetime.datetime.now()
+data_em_texto = '{}/{}/{}'.format(x.day, x.month,x.year)
 
 # add image in page
 st.image("logo_parking.png", caption="Parking Lot", width=100)
 
 st.header('Hello, welcome to parking system!')
 #st.subheader(f':date: Today : {x.day}/{x.month}/{x.year} ')
-st.subheader(f':date: Today : {x} ')
+st.subheader(f':date: Today : {data_em_texto} ')
 
 # random teste
 vaga_free_est_1 = random.randrange(1,69)
