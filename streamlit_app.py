@@ -7,7 +7,7 @@ import random
 
 #Get add datetime
 x = datetime.datetime.now()
-data_em_texto = '{}/{}/{}'.format(x.day, x.month,x.year)
+data_em_texto = x.strftime('%d/%m/%Y %H:%M')
 
 # add image in page
 st.image("logo_parking.png", caption="Parking Lot", width=100)
