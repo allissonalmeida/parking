@@ -40,7 +40,7 @@ with parking:
                 [-2.499214473542157, -44.28518202906775], 
                 popup="Parking 1", 
                 icon=folium.Icon(color='red'),
-                tooltip="Parking 1: 12 free").add_to(fg)
+                tooltip= f"{string_1}").add_to(fg)
     
     fg = folium.FeatureGroup(name="Estacionamento 2", show=True).add_to(map)
     string_2 = f'Parking 2: {vaga_free_est_2} free'
