@@ -34,13 +34,15 @@ with parking:
 
     fg = folium.FeatureGroup(name="Estacionamento 1", show=True).add_to(map)
 
+    string_1 = f'Parking 1: {vaga_free_est_1} free'
+
     folium.Marker(
                 [-2.499214473542157, -44.28518202906775], 
                 popup="Parking 1", 
                 icon=folium.Icon(color='red'),
                 tooltip="Parking 1: 7 free").add_to(fg)
     
-    fg = folium.FeatureGroup(name="Estacionamento 2", show=True).add_to(map)
+    fg = folium.FeatureGroup(name=string_1, show=True).add_to(map)
 
     folium.Marker(
                 [-2.4979254578655006, -44.28468403902029], 
