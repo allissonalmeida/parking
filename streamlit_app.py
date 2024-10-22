@@ -70,4 +70,5 @@ with about:
     st.write('E-mail: ajsalmeida@inf.puc-rio.br')
     st.write('GitHub: https://github.com/allissonalmeida/parking')
     st.write('Streamlit Share: https://parking-lot.streamlit.app/')
+    st.write('Technologies used: Computer Vision, Python, Streamlit, GitHub, Replit API')
     
