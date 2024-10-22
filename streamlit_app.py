@@ -33,14 +33,13 @@ with parking:
     map = folium.Map(location=[-2.4981688900228276, -44.285531045356464], zoom_start=16)
 
     fg = folium.FeatureGroup(name="Estacionamento 1", show=True).add_to(map)
-
     string_1 = f'Parking 1: {vaga_free_est_1} free'
 
     folium.Marker(
                 [-2.499214473542157, -44.28518202906775], 
                 popup="Parking 1", 
                 icon=folium.Icon(color='red'),
-                tooltip=string_1).add_to(fg)
+                tooltip="Parking 1: 12 free").add_to(fg)
     
     fg = folium.FeatureGroup(name="Estacionamento 2", show=True).add_to(map)
     string_2 = f'Parking 2: {vaga_free_est_2} free'
@@ -49,7 +48,7 @@ with parking:
                 [-2.4979254578655006, -44.28468403902029], 
                 popup="Parking 2", 
                 icon=folium.Icon(color='red'),
-                tooltip=string_2).add_to(fg)
+                tooltip="Parking 2: 56 free").add_to(fg)
 
     st_folium(map, width=750)
 
