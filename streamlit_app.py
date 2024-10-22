@@ -7,7 +7,6 @@ import datetime
 #Get add datetime
 x = datetime.datetime.now()
 
-
 # add image in page
 st.image("logo_parking.png", caption="Parking Lot", width=100)
 
