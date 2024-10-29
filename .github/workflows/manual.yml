@@ -1,0 +1,38 @@
+name: Executar Script
+
+on:
+  # executar a cada 6 horas
+  schedule:
+    - cron: "1 * * * *"
+  # executar quando acionado manualmente
+  workflow_dispatch:
+  # executar quando este arquivo for alterado
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/run-script.yml"  # altere para ser o caminho para este arquivo
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Instalar dependências
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r ${GITHUB_WORKSPACE}/requirements.txt 
+
+    - name: Executar script
+      run: python ${GITHUB_WORKSPACE}/parking/api_get_vagas.py 
+
+    - name: Adicionar e confirmar
+      uses: EndBug/add-and-commit@v9
+      with:
+        author_name: GitHub Actions
+        author_email: 41898282+github-actions[bot]@users.noreply.github.com
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        message: "chore: Atualizar arquivo"
+        add: "*.json"
