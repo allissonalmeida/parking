@@ -26,7 +26,7 @@ jobs:
         pip install -r ${GITHUB_WORKSPACE}/requirements.txt 
 
     - name: Executar script
-      run: python ${GITHUB_WORKSPACE}api_get_vagas.py 
+      run: python api_get_vagas.py 
 
     - name: Adicionar e confirmar
       uses: EndBug/add-and-commit@v9
@@ -35,4 +35,4 @@ jobs:
         author_email: 41898282+github-actions[bot]@users.noreply.github.com
         github_token: ${{ secrets.GITHUB_TOKEN }}
         message: "chore: Atualizar arquivo"
-        add: "*.json"
+        add: "parking_lot.json"
