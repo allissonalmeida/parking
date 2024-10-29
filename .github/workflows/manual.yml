@@ -3,7 +3,7 @@ name: Executar Script
 on:
   # executar a cada 6 horas
   schedule:
-    - cron: "1 * * * *"
+    - cron: "*/10 * * * *"
   # executar quando acionado manualmente
   workflow_dispatch:
   # executar quando este arquivo for alterado
